@@ -1,7 +1,7 @@
 app:
   name: CoTurn
   code: COTURN
-  notify: ssfs@ecloudcontrol.com
+  notify: njose@ecloudcontrol.com
 
 build:
   version: 4.5
@@ -11,7 +11,7 @@ build:
   image_template: coturn-4.5
   
 deploy:
-  context: dsfs/DEV
+  context: neethu-cc/DEV
   type: statefulset
   replicas: 1
   port:
