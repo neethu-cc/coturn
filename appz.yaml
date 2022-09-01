@@ -1,0 +1,28 @@
+app:
+  name: CoTurn
+  code: COTURN
+  notify: ssfs@ecloudcontrol.com
+
+build:
+  version: 4.5
+  env: DEV
+  build_file: none
+  output_files: output/*.zip
+  image_template: coturn-4.5
+  
+deploy:
+  context: dsfs/DEV
+  type: statefulset
+  replicas: 1
+  port:
+  - 3478
+
+volumes:
+- claim: coturn-data
+  mount: /appz/data
+  name: coturn-data
+  size: 5Gi
+  mode: ReadWriteOnce
+  
+properties:
+  revision : 1
